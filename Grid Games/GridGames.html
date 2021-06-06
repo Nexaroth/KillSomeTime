@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.83.1">
+      
+      <title></title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        
+        
+        <style>
+            body{
+              padding: 0%;
+              margin-top: 0%;
+              background-color: #071F33;
+              margin: 0;
+              font-family: Arial;
+            }
+
+            .bd-placeholder-img {
+              font-size: 1.125rem;
+              text-anchor: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              user-select: none;
+            }
+
+            .container-fluid{
+              background-color: #0E3E66;
+              padding: 0.3em;
+              
+            }
+
+            div.container-fluid{
+              justify-content:stretch;
+            }
+
+            .undernav{
+              background-color: #0B2F4D;
+              padding: 0.8em;
+              box-sizing: border-box;
+              margin-top: -0.55cm;
+              margin-left: -0.55cm;
+              margin-right: -0.55cm;
+            }
+
+            .sidenavopen{
+              font-size:30px;
+              cursor:pointer;
+              color:white;
+            }
+
+            .space{
+              color: #78CFED;
+              text-decoration: none;
+              word-spacing: 1c;
+              margin-left: 1em;
+
+            }
+
+
+            * {
+              box-sizing: border-box;
+            }
+
+            .header {
+              text-align: center;
+              padding: 32px;
+              color: white;
+            }
+
+            .row {
+              /* IE10 */
+              display: flex;
+              flex-wrap: wrap;
+              padding: 0 4px;
+              
+            }
+
+            /* Create four equal columns that sits next to each other */
+            .column {
+              
+              
+              width: 24%;
+              padding: 0 4px;
+              margin-bottom: 5%;
+              margin-left: 1%;
+            }
+
+            .column img {
+              margin-top: 5%;
+              margin-bottom: 1%;
+              vertical-align: middle;
+              width: 24%;
+              
+            }
+
+            .column h1{
+            color: white;
+            font-size: 200%;
+            text-align: center;
+            }
+
+
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 800px) {
+              .column {
+                
+                flex: 49%;
+                max-width: 49%;
+              }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+              .column {
+                
+                flex: 100%;
+                max-width: 100%;
+              }
+            }
+
+
+
+          
+          /* The side navigation menu */
+            .sidenav {
+              height: 100%; /* 100% Full-height */
+              width: 0; /* 0 width - change this with JavaScript */
+              position: absolute; /* Stay in place */
+              z-index: 1; /* Stay on top */
+              left: 0;
+              background-color: #0E3E66; /* Black*/
+              overflow-x: hidden; /* Disable horizontal scroll */
+              padding-top: 60px; /* Place content 60px from the top */
+              transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+              float: left;
+            }
+
+/* The navigation menu links */
+            .sidenav a {
+              padding: 8px 8px 8px 32px;
+              text-decoration: none;
+              font-size: 25px;
+              color: white;
+              display: block;
+              transition: 0.3s;
+            }
+
+/* When you mouse over the navigation links, change their color */
+            .sidenav a:hover {
+              color: #78CFED;
+            }
+
+/* Position and style the close button (top right corner) */
+          .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: white;
+          }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+          #main {
+            transition: margin-left .5s;
+            padding: 20px;
+          }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+          @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+          }
+   
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+        </style>
+         
+       
+    </head>
+    <body >
+      
+      <main>
+        
+        <nav class="navbar navbar-dark " aria-label="First navbar example" style="background-color: #0E3E66;">
+          <div class="container-fluid">
+            <span class="sidenavopen" onclick="openNav()">&#9776;</span>
+            <a class="navbar-brand" href="#" style="text-align: left;">KillSomeTime</a>
+              <form>
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+              </form>
+            
+          </div>
+        </nav>
+
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#" >Home</a>
+          <a href="#" >Videos</a>
+          <a href="#" >Memes</a>
+          <a href="#" >Games</a>
+        </div>
+        
+        
+        
+        <div id="main">
+          <div class="undernav">
+            <a href="#" class="space">Legendary</a>
+            <a href="#" class="space">Pretty Cool</a>
+            <a href="#" class="space">Cool</a>
+          </div>
+
+          <div>
+
+            <div class="header">
+              <h1>Welcome to Doge Games</h1>
+            </div>
+
+            <div class="row"> 
+              
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 1</h1>
+                </div>
+                
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 2</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 3</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 4</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 5</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 6</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 7</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 8</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 9</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 10</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 11</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 12</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 13</h1>
+                </div>
+
+                <div class="column">
+                  <img src="doge.jpg" style="width:90%">
+                  <h1>Doge Game 14</h1>
+                </div>
+
+              
+              
+              </div>
+
+        </div>
+
+        
+
+      </main>
+
+        
+        <script>
+          /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+        </script>
+    </body>
+</html>

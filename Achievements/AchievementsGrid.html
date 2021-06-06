@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.83.1">
+      
+      <title></title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <style>
+            body{
+              padding: 0%;
+              margin-top: 0%;
+              background-color: #071F33;
+              margin: 0;
+              font-family: Arial;
+            }
+
+            .bd-placeholder-img {
+              font-size: 1.125rem;
+              text-anchor: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              user-select: none;
+            }
+
+            .container-fluid{
+              background-color: #0E3E66;
+              padding: 0.3em;
+              
+            }
+
+            div.container-fluid{
+              justify-content:stretch;
+            }
+
+            .undernav{
+              background-color: #0B2F4D;
+              padding: 1.3em;
+              box-sizing: border-box;
+              margin-top: -0.55cm;
+              margin-left: -0.55cm;
+              margin-right: -0.55cm;
+            }
+
+            .sidenavopen{
+              font-size:30px;
+              cursor:pointer;
+              color:white;
+            }
+
+            .space{
+              color: #78CFED;
+              text-decoration: none;
+              word-spacing: 1c;
+              margin-left: 1em;
+
+            }
+
+            .profilebox{
+                display: inline;
+                position: absolute;
+                margin: 1% 0 0 20%;
+                height: 50%;
+                width: 13%;
+                background-color: #0B2F4D;
+                text-align: center;
+                color: white;
+                border-radius: 0.3em;
+            }
+
+            .achievementsgrid{
+                display: inline;
+                position: absolute;
+                margin: 1% 0 0 35%;
+                height: 80%;
+                width: 40%;
+                background-color: #0B2F4D;
+                text-align: center;
+                color: white;
+                border-radius: 0.3em;
+                padding-bottom: 2%;
+                
+            }
+
+            /* Style the tab */
+.tab {
+  float: left;
+  background-color: #0B2F4D;
+  width: 34%;
+  height: 98%;
+  overflow-y: scroll;
+
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: white;
+  padding: 10% 16%;
+  height: 10%;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 100%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #0E3E66;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #0E3E66;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0% 4%;
+  background-color: #0B2F4D;
+  width: 65%;
+  height: 98%;
+  overflow-y: auto;
+  margin-left: 1%;
+}
+
+
+
+            .row {
+              /* IE10 */
+              display: flex;
+              flex-wrap: wrap;
+              padding: 0 0.4%;
+              
+            }
+
+            /* Create four equal columns that sits next to each other */
+            .column {
+              
+              
+              width: 24%;
+              padding: 0 0.4%;
+              margin-bottom: 5%;
+              margin-left: 1%;
+            }
+
+            .column img {
+              margin-top: 5%;
+              margin-bottom: 1%;
+              vertical-align: middle;
+              width: 24%;
+              
+            }
+
+            .column h1{
+            color: white;
+            font-size: 100%;
+            text-align: center;
+            }
+
+            .lockedAchievement{
+              opacity: 40%;
+            }
+
+            .unlockedAchievement{
+              opacity: 100%;
+            }
+
+
+
+            /* Responsive layout - makes a three column-layout instead of four columns */
+            @media screen and (max-width: 1100px) {
+              .column {
+                
+                flex: 32%;
+                max-width: 32%;
+              }
+              .column img{
+                  max-width:60%;
+                  max-height: 70%;
+              }
+              .tabcontent{
+                max-width: 60%;
+              }
+            }
+
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 800px) {
+              .column {
+                
+                flex: 49%;
+                max-width: 49%;
+              }
+              .column img{
+                  max-width:60%;
+                  max-height: 70%;
+              }
+
+              .tabcontent{
+                max-width: 60%;
+              }
+              
+            }
+
+            
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+              .column {
+                
+                flex: 100%;
+                max-width: 100%;
+              }
+              .column img{
+                  max-width:50%;
+                  max-height: 70%;
+              }
+
+              .tabcontent{
+                max-width: 60%;
+              }
+            }
+
+
+
+          
+          /* The side navigation menu */
+            .sidenav {
+              height: 100%; /* 100% Full-height */
+              width: 0; /* 0 width - change this with JavaScript */
+              position: absolute; /* Stay in place */
+              z-index: 1; /* Stay on top */
+              left: 0;
+              background-color: #0E3E66; /* Black*/
+              overflow-x: hidden; /* Disable horizontal scroll */
+              padding-top: 60px; /* Place content 60px from the top */
+              transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+              float: left;
+            }
+
+/* The navigation menu links */
+            .sidenav a {
+              padding: 8px 8px 8px 32px;
+              text-decoration: none;
+              font-size: 25px;
+              color: white;
+              display: block;
+              transition: 0.3s;
+            }
+
+/* When you mouse over the navigation links, change their color */
+            .sidenav a:hover {
+              color: #78CFED;
+            }
+
+/* Position and style the close button (top right corner) */
+          .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: white;
+          }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+          #main {
+            transition: margin-left .5s;
+            padding: 20px;
+          }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+          @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+          }
+   
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+        </style>
+         
+       
+    </head>
+    <body >
+      
+      <main>
+        
+        <nav class="navbar navbar-dark " aria-label="First navbar example" style="background-color: #0E3E66;">
+          <div class="container-fluid">
+            <span class="sidenavopen" onclick="openNav()">&#9776;</span>
+            <a class="navbar-brand" href="#" style="text-align: left;">KillSomeTime</a>
+              <form>
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+              </form>
+            
+          </div>
+        </nav>
+
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#" >Home</a>
+          <a href="#" >Videos</a>
+          <a href="#" >Memes</a>
+          <a href="#" >Games</a>
+        </div>
+        
+        
+        
+        <div id="main">
+          <div class="undernav">
+            <a href="#" class="space">Legendary</a>
+            <a href="#" class="space">Pretty Cool</a>
+            <a href="#" class="space">Cool</a>
+          </div>
+
+            <div>
+
+                <div class="profilebox">
+                    <p>*PROFILE NAME*</p>
+
+                </div>
+
+                  <div class="achievementsgrid">
+                    <p>ACHIEVEMENTS</p>
+
+                        <div class="tab">
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement1')" id="defaultOpen">Achievement section 1</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement2')">Achievement section 2</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement3')">Achievement section 3</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement4')">Achievement section 4</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement5')">Achievement section 5</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement6')">Achievement section 6</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement7')">Achievement section 7</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement8')">Achievement section 8</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement9')">Achievement section 9</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement10')">Achievement section 10</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement11')">Achievement section 11</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement12')">Achievement section 12</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement13')">Achievement section 13</button>
+                          <button class="tablinks" onclick="openAchievement(event, 'achievement14')">Achievement section 14</button>
+                        </div>
+                        
+                        <div id="achievement1" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column lockedAchievement" id="lockAch" onclick="lockAchievement();">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+                        
+                        <div id="achievement2" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+                        
+                        <div id="achievement3" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement4" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement5" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement6" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement7" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement8" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement9" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement10" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement11" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement12" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement13" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+
+                        <div id="achievement14" class="tabcontent">
+                          <div class="row"> 
+              
+                            <div class="column ">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 1</h1>
+                            </div>
+                            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 2</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 3</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 4</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 5</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 6</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 7</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 8</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 9</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 10</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 11</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 12</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 13</h1>
+                            </div>
+            
+                            <div class="column">
+                              <img src="achievement.png" style="width:90%">
+                              <h1>Doge Game 14</h1>
+                            </div>
+            
+                          </div>
+                        </div>
+                  </div>
+                </div> 
+            </div>
+        </div>
+
+        
+
+      </main>
+
+        
+        <script>
+                /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+        </script>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+<!-- tabs -->
+<script>
+  function openAchievement(evt, achievementName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(achievementName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  
+  </script>
+
+  <!-- click to lock -->
+  <script>
+    function lockAchievement(){
+     
+
+      if(document.getElementById("lockAch").classList.contains('lockedAchievement')){
+        var lock = document.querySelector(".lockedAchievement");
+
+        lock.classList.remove("lockedAchievement");
+        lock.classList.add("unlockedAchievement");
+      }
+      else if(document.getElementById("lockAch").classList.contains('unlockedAchievement')){
+        var lock = document.querySelector(".unlockedAchievement");
+
+        lock.classList.remove("unlockedAchievement");
+        lock.classList.add("lockedAchievement");
+      
+              
+    }
+  }
+
+  </script>
+    
+    </body>
+</html>
